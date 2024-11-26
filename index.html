@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Images</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            color: #000000;
+            background: url('background.jpg') no-repeat center center/cover;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #f4f4f4;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: url('background.jpg') no-repeat center center/cover;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SOC Labs Solved</h1>
+        <p></p>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <div class="grid-item">
+                <img src="1.png" alt="Lab Image 1" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="2.png" alt="Lab Image 2" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="3.png" alt="Lab Image 3" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="4.png" alt="Lab Image 4" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="5.png" alt="Lab Image 5" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="6.png" alt="Lab Image 6" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="7.png" alt="Lab Image 7" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="8.png" alt="Lab Image 8" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="9.png" alt="Lab Image 9" class="photo">
+            </div>
+            <div class="grid-item">
+                <img src="10.png" alt="Lab Image 10" class="photo">
+            </div>
+	    <div class="grid-item">
+                <img src="11.png" alt="Lab Image 11" class="photo">
+            </div>
+	    <div class="grid-item">
+                <img src="12.png" alt="Lab Image 12" class="photo">
+	    </div>
+	    <div class="grid-item">
+                <img src="13.png" alt="Lab Image 13" class="photo">
+	    </div>
+	    <div class="grid-item">
+                <img src="14.png" alt="Lab Image 14" class="photo">
+	    </div>
+ 	    <div class="grid-item">
+                <img src="15.png" alt="Lab Image 15" class="photo">
+	    </div>
+	    <div class="grid-item">
+                <img src="16.png" alt="Lab Image 15" class="photo">
+	    </div>
+
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+    <footer>
+        <p>© 2024 Sahil Dherange. Email sahilkunpc@gmail.com.</p>
+    </footer>
+    <script>
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-image');
+        const images = document.querySelectorAll('.photo');
+        const closeBtn = document.querySelector('.close');
+
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
